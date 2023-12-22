@@ -8,14 +8,14 @@ import { LuHome } from "react-icons/lu";
 const Navbar = () => {
 
     const navItems = <>
-        <li className="border-l text-slate-900 font-bold text-base" ><Link to='/'><LuHome className="text-xl"></LuHome>HOME</Link></li>
-        <li className="border-l text-slate-900 font-bold text-base" ><Link to='/add'><LuBookPlus className="text-xl"></LuBookPlus>ADD</Link></li>
-        <li className="border-l text-slate-900 font-bold text-base" ><Link to='/borrow'><LuBookUp className="text-xl"></LuBookUp>BORROW</Link></li>
-        <li className="border-l text-slate-900 font-bold text-base" ><Link to='/all'><LuBookDown className="text-xl"></LuBookDown> ALL</Link></li>
+        <li className="border-l hover:text-slate-100 text-slate-900 font-bold text-base" ><Link to='/'><LuHome className="text-xl"></LuHome>HOME</Link></li>
+        <li className="border-l hover:text-slate-100 text-slate-900 font-bold text-base" ><Link to='/add'><LuBookPlus className="text-xl"></LuBookPlus>ADD</Link></li>
+        <li className="border-l hover:text-slate-100 text-slate-900 font-bold text-base" ><Link to='/borrow'><LuBookUp className="text-xl"></LuBookUp>BORROW</Link></li>
+        <li className="border-l hover:text-slate-100 text-slate-900 font-bold text-base" ><Link to='/all'><LuBookDown className="text-xl"></LuBookDown> ALL</Link></li>
     </>
     return (
-        <div className="">
-            <div className="bg-gradient-to-r from-violet-500 to-slate-400 navbar p-2">
+        <div>
+            <div className="bg-gradient-to-r from-violet-500 to-slate-400 navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -36,9 +36,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button><Link to='/login' className="border-l p-2 text-slate-900 font-bold text-base">LOG IN</Link></button>
-                    <button><Link to='/signup' className="border-l p-2 text-slate-900 font-bold text-base">SIGN UP</Link></button>
-                    <button><Link to='/' className="border-l p-2 text-slate-900 font-bold text-base">SIGN OUT</Link></button>
+                    <button><Link to='/login' className="border-l p-2 hover:text-slate-100 text-slate-900 font-bold text-base">LOG IN</Link></button>
+                    <button><Link to='/signup' className="border-l p-2 hover:text-slate-100 text-slate-900 font-bold text-base">SIGN UP</Link></button>
+                    <button><Link to='/' className="border-l p-2 hover:text-slate-100 text-slate-900 font-bold text-base">SIGN OUT</Link></button>
                 </div>
             </div>
         </div>
