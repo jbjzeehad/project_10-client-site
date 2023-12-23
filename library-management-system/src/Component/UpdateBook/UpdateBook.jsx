@@ -1,6 +1,6 @@
 
 
-const AddBook = () => {
+const UpdateBook = () => {
     return (
         <div className="bg-gradient-to-r from-violet-500 to-slate-400">
             <form className=" py-5 px-10 w-full grid grid-cols-2 gap-5">
@@ -28,31 +28,23 @@ const AddBook = () => {
                             </select>
                         </div>
                     </div>
-                    <div className="form-control  gap-3 m-3">
 
-                        <span className="font-bold text-slate-900 text-xl">Quantity</span>
-
-                        <input type="text" placeholder="amount" className="input input-bordered" required />
-                    </div>
                 </div>
                 <div>
                     <div className="form-control  gap-3 m-3">
 
                         <span className="font-bold text-slate-900 text-xl">Rating</span>
-
                         <input type="text" placeholder="Out of 5.0" className="input input-bordered" required />
+
                     </div>
                     <div className="form-control  gap-3 m-3">
                         <span className="font-bold text-slate-900 text-xl">Image</span>
                         <input type="text" placeholder="img url" className="input input-bordered" required />
                     </div>
-                    <div className="form-control  gap-3 m-3">
-                        <span className="font-bold text-slate-900 text-xl">Description</span>
-                        <input type="text" placeholder="description" className="input input-bordered" required />
-                    </div>
+
                     <div className="form-control m-3">
-                        <span className="mb-4 text-violet-600">All information should be valid.</span>
-                        <button className="btn hover:bg-violet-500 hover:text-white ">ADD BOOK</button>
+                        <span className="mb-4 text-violet-600">Check again.</span>
+                        <button className="btn hover:bg-violet-500 hover:text-white ">UPDATE BOOK</button>
                     </div>
                 </div>
             </form>
@@ -61,4 +53,4 @@ const AddBook = () => {
     );
 };
 
-export default AddBook;
+export default UpdateBook;

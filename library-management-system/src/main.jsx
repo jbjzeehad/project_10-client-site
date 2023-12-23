@@ -14,6 +14,7 @@ import AddBook from './Component/AddBook/AddBook';
 import AllBook from './Component/AllBook/AllBook';
 import BorrowBook from './Component/BorrowBook/BorrowBook';
 import LogIn from './Component/LogIn/LogIn';
+import UpdateBook from './Component/UpdateBook/UpdateBook';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/add",
         element: <AddBook></AddBook>,
+      },
+      {
+        path: "/update",
+        element: <UpdateBook></UpdateBook>,
       },
       {
         path: "/borrow",
