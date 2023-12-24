@@ -15,15 +15,15 @@ const AuthProviders = ({ children }) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
-    const signInUser = (email, password) => {
+    const logInUser = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
-    const signwithGoogle = () => {
+    const logInwithGoogle = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
-    const signOutUser = () => {
+    const logOutUser = () => {
         setLoading(true);
         return signOut(auth);
     }
@@ -40,7 +40,7 @@ const AuthProviders = ({ children }) => {
     }, [])
 
     const authinfo = {
-        user, createUser, signInUser, signwithGoogle, signOutUser, loading
+        user, createUser, logInUser, logInwithGoogle, logOutUser, loading
     };
     return (
         <Authcontxt.Provider value={authinfo}>

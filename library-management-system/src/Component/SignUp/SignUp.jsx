@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Authcontxt } from "../Providers/AuthProviders";
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
 
 const SignUp = () => {
