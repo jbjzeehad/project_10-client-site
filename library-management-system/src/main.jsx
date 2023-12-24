@@ -15,6 +15,7 @@ import AllBook from './Component/AllBook/AllBook';
 import BorrowBook from './Component/BorrowBook/BorrowBook';
 import LogIn from './Component/LogIn/LogIn';
 import UpdateBook from './Component/UpdateBook/UpdateBook';
+import AuthProviders from './Component/Providers/AuthProviders';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProviders>
+      <RouterProvider router={router} />
+    </AuthProviders>
+
   </React.StrictMode>,
 )
