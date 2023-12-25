@@ -16,6 +16,7 @@ import BorrowBook from './Component/BorrowBook/BorrowBook';
 import LogIn from './Component/LogIn/LogIn';
 import UpdateBook from './Component/UpdateBook/UpdateBook';
 import AuthProviders from './Component/Providers/AuthProviders';
+import PrivateRoutes from './Component/PrivateRoutes/PrivateRoutes';
 
 const router = createBrowserRouter([
   {
@@ -29,19 +30,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/add",
-        element: <AddBook></AddBook>,
+        element: <PrivateRoutes> <AddBook></AddBook></PrivateRoutes>,
       },
       {
-        path: "/update",
-        element: <UpdateBook></UpdateBook>,
+        path: "/update/:id",
+        element: <PrivateRoutes><UpdateBook></UpdateBook></PrivateRoutes>,
+        loader: ({ params }) => fetch(`http://localhost:5000/allbooks/${params.id}`)
       },
       {
         path: "/borrow",
-        element: <BorrowBook></BorrowBook>,
+        element: <PrivateRoutes><BorrowBook></BorrowBook></PrivateRoutes>,
       },
       {
         path: "/all",
-        element: <AllBook></AllBook>,
+        element: <PrivateRoutes><AllBook></AllBook></PrivateRoutes>,
+        loader: () => fetch('http://localhost:5000/allbooks')
       },
       {
         path: "/login",
