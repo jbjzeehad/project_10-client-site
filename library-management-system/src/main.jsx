@@ -17,6 +17,10 @@ import LogIn from './Component/LogIn/LogIn';
 import UpdateBook from './Component/UpdateBook/UpdateBook';
 import AuthProviders from './Component/Providers/AuthProviders';
 import PrivateRoutes from './Component/PrivateRoutes/PrivateRoutes';
+import HorrorBook from './Component/Category/HorrorBook';
+import Comic from './Component/Category/Comic';
+import History from './Component/Category/History';
+import SciTec from './Component/Category/SciTec';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +48,26 @@ const router = createBrowserRouter([
       {
         path: "/all",
         element: <PrivateRoutes><AllBook></AllBook></PrivateRoutes>,
+        loader: () => fetch('http://localhost:5000/allbooks')
+      },
+      {
+        path: "/horror",
+        element: <PrivateRoutes><HorrorBook></HorrorBook></PrivateRoutes>,
+        loader: () => fetch('http://localhost:5000/allbooks')
+      },
+      {
+        path: "/comic",
+        element: <PrivateRoutes><Comic></Comic></PrivateRoutes>,
+        loader: () => fetch('http://localhost:5000/allbooks')
+      },
+      {
+        path: "/history",
+        element: <PrivateRoutes><History></History></PrivateRoutes>,
+        loader: () => fetch('http://localhost:5000/allbooks')
+      },
+      {
+        path: "/scitec",
+        element: <PrivateRoutes><SciTec></SciTec></PrivateRoutes>,
         loader: () => fetch('http://localhost:5000/allbooks')
       },
       {
