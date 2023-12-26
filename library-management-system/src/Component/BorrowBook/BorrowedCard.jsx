@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { LuBookDown, LuBookUp } from "react-icons/lu";
 
 
-const BorrowedCard = ({ borrowcard }) => {
+const BorrowedCard = ({ borrowcard, handleDeleteBook }) => {
 
     ////////////////////////////////////////
     const [eventCard, setEventCard] = useState([]);
@@ -31,9 +31,29 @@ const BorrowedCard = ({ borrowcard }) => {
 
     }, [])
 
+
+    // const handleDeleteBook = id => {
+    //     fetch(`http://localhost:5000/borrowedbooks/${id}`, {
+    //         method: 'DELETE'
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             if (data.deletedCount > 0) {
+    //                 alert('deleted');
+    //             }
+    //         })
+    // }
+
+
+
+
+
+
+
     return (
         <div>
-            {/* <h3>borrow book Id :{_id}</h3> */}
+            <h3>borrow book Id :{_id}</h3>
             <div className="rounded-lg bg-gradient-to-l from-violet-500 to-slate-400 grid grid-cols-4">
                 <div className="col-span-1">
                     <img src={eventCard.image} className="rounded-l-lg" alt="" />
@@ -49,7 +69,7 @@ const BorrowedCard = ({ borrowcard }) => {
 
                         <div className="mt-1 flex justify-between">
                             {/* ///to={`/bookdetails/${_id}`} */}
-                            <Link ><button className="border text-base  text-slate-100 border-violet-800 hover:bg-violet-800 px-3 py-1 rounded-lg">Return Button</button></Link>
+                            <button onClick={() => handleDeleteBook(_id)} className="border text-base  text-slate-100 border-violet-800 hover:bg-violet-800 px-3 py-1 rounded-lg">Return Button</button>
 
                         </div>
                     </div>
