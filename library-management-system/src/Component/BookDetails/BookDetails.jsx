@@ -4,17 +4,72 @@ import { PiBooksDuotone } from "react-icons/pi";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import { LiaSwatchbookSolid } from "react-icons/lia";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Authcontxt } from "../Providers/AuthProviders";
+import { ToastContainer, toast } from "react-toastify";
 
 
 const BookDetails = () => {
     const { user } = useContext(Authcontxt);
-
     const bookDetails = useLoaderData();
     const { id } = useParams();
-
     const details = bookDetails.find(book => book._id === id);
+
+    const handleBorrowedBooks = e => {
+        e.preventDefault();
+        const form = e.target;
+        const email = user.email;
+        const currentdate = form.currentdate.value;
+        const returndate = form.returndate.value;
+        const bookId = details._id;
+        const borrowed = { email, returndate, currentdate, bookId };
+
+        let amount = parseInt(details.amount);
+        if (amount > 0) {
+            fetch('http://localhost:5000/borrowedbooks', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(borrowed)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
+            --amount;
+
+            const image = details.image;
+            const bookName = details.bookName;
+            const authorName = details.authorName;
+            const category = details.category;
+            const rating = details.rating;
+            const updatedbooks = { image, bookName, authorName, category, rating, amount };
+
+
+            fetch(`http://localhost:5000/allbooks/${details._id}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(updatedbooks)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.modifiedCount > 0) {
+                        toast('Done');
+                    }
+                })
+
+        }
+        else {
+            toast('Not Enough Book');
+        }
+    }
+
+
+
     return (
         <div className="bg-gradient-to-r from-violet-500 to-slate-300">
             <div className="grid grid-cols-6  p-3">
@@ -62,7 +117,7 @@ const BookDetails = () => {
                         <dialog id="my_modal_2" className="modal">
                             <div className="modal-box bg-violet-500">
                                 <h3 className="font-bold flex items-center gap-2 m-3 text-2xl text-slate-50"><IoBookOutline></IoBookOutline> {details.bookName}</h3>
-                                <form >
+                                <form onSubmit={handleBorrowedBooks} >
                                     <div className="form-control  gap-3 m-3">
                                         <span className="font-bold text-slate-900 text-xl">Name</span>
 
@@ -74,8 +129,12 @@ const BookDetails = () => {
                                         <input type="text" name="email" value={user.email} className="input input-bordered" disabled />
                                     </div>
                                     <div className="form-control  gap-3 m-3">
-                                        <span className="font-bold text-slate-900 text-xl">Return Date</span>
-                                        <input type="date" name="date" className="input input-bordered" required />
+                                        <span className="font-bold text-slate-900 text-lg">Current Date</span>
+                                        <input type="date" name="currentdate" className="input def input-bordered" />
+                                    </div>
+                                    <div className="form-control  gap-3 m-3">
+                                        <span className="font-bold text-slate-900 text-lg">Return Date</span>
+                                        <input type="date" name="returndate" className="input input-bordered" required />
                                     </div>
                                     <button className="btn m-3 hover:bg-violet-500 hover:text-white ">SUBMIT</button>
                                 </form>
@@ -91,6 +150,7 @@ const BookDetails = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
