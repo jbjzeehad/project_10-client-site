@@ -22,6 +22,7 @@ import Comic from './Component/Category/Comic';
 import History from './Component/Category/History';
 import SciTec from './Component/Category/SciTec';
 import BookDetails from './Component/BookDetails/BookDetails';
+import BorrowedCard from './Component/BorrowBook/BorrowedCard';
 
 const router = createBrowserRouter([
   {
@@ -50,7 +51,9 @@ const router = createBrowserRouter([
       {
         path: "/borrow",
         element: <PrivateRoutes><BorrowBook></BorrowBook></PrivateRoutes>,
+        loader: () => fetch('http://localhost:5000/borrowedbooks')
       },
+
       {
         path: "/all",
         element: <PrivateRoutes><AllBook></AllBook></PrivateRoutes>,

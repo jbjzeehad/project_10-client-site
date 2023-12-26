@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 const BookCard = ({ bookcard }) => {
-    const { _id, image, bookName, authorName, category, rating } = bookcard
+    const { _id, image, bookName, authorName, category, rating } = bookcard;
     return (
         <div>
             <div className="rounded-lg bg-gradient-to-l from-violet-500 to-slate-400 grid grid-cols-4">
