@@ -21,6 +21,7 @@ import HorrorBook from './Component/Category/HorrorBook';
 import Comic from './Component/Category/Comic';
 import History from './Component/Category/History';
 import SciTec from './Component/Category/SciTec';
+import BookDetails from './Component/BookDetails/BookDetails';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <PrivateRoutes><UpdateBook></UpdateBook></PrivateRoutes>,
         loader: ({ params }) => fetch(`http://localhost:5000/allbooks/${params.id}`)
+      },
+      {
+        path: "/bookdetails/:id",
+        element: <PrivateRoutes><BookDetails></BookDetails></PrivateRoutes>,
+        loader: () => fetch('http://localhost:5000/allbooks')
       },
       {
         path: "/borrow",
@@ -78,6 +84,7 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <SignUp></SignUp>,
       },
+
     ],
   },
 ]);

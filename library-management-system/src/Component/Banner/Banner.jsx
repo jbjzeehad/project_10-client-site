@@ -25,7 +25,7 @@ const Banner = () => {
             >
                 <SwiperSlide>
 
-                    <img className="relative rounded-lg" src="https://i.ibb.co/XScvv3S/horror1.png" />
+                    <img className=" rounded-l-lg" src="https://i.ibb.co/XScvv3S/horror1.png" />
                     <div className="flex items-center justify-between absolute bottom-0 left-0 bg-slate-900 bg-opacity-80 py-5 px-5 w-full rounded-bl-lg text-slate-300">
                         <div>
                             <p className=' font-semibold text-3xl'>Ethel Cain</p>
