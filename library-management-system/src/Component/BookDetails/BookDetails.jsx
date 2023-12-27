@@ -1,10 +1,10 @@
 import { FiUser } from "react-icons/fi";
 import { IoBookOutline } from "react-icons/io5";
 import { PiBooksDuotone } from "react-icons/pi";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import { LiaSwatchbookSolid } from "react-icons/lia";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Authcontxt } from "../Providers/AuthProviders";
 import { ToastContainer, toast } from "react-toastify";
 //////////////////////////////////////
