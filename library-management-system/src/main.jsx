@@ -41,43 +41,43 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <PrivateRoutes><UpdateBook></UpdateBook></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/allbooks/${params.id}`)
+        loader: ({ params }) => fetch(`https://ph-library-server.vercel.app/allbooks/${params.id}`)
       },
       {
         path: "/bookdetails/:id",
         element: <PrivateRoutes><BookDetails></BookDetails></PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/allbooks')
+        loader: () => fetch('https://ph-library-server.vercel.app/allbooks')
       },
       {
         path: "/borrow",
         element: <PrivateRoutes><BorrowBook></BorrowBook></PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/borrowedbooks')
+        loader: () => fetch('https://ph-library-server.vercel.app/borrowedbooks')
       },
 
       {
         path: "/all",
         element: <PrivateRoutes><AllBook></AllBook></PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/allbooks')
+        loader: () => fetch('https://ph-library-server.vercel.app/allbooks')
       },
       {
         path: "/horror",
         element: <PrivateRoutes><HorrorBook></HorrorBook></PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/allbooks')
+        loader: () => fetch('https://ph-library-server.vercel.app/allbooks')
       },
       {
         path: "/comic",
         element: <PrivateRoutes><Comic></Comic></PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/allbooks')
+        loader: () => fetch('https://ph-library-server.vercel.app/allbooks')
       },
       {
         path: "/history",
         element: <PrivateRoutes><History></History></PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/allbooks')
+        loader: () => fetch('https://ph-library-server.vercel.app/allbooks')
       },
       {
         path: "/scitec",
         element: <PrivateRoutes><SciTec></SciTec></PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/allbooks')
+        loader: () => fetch('https://ph-library-server.vercel.app/allbooks')
       },
       {
         path: "/login",

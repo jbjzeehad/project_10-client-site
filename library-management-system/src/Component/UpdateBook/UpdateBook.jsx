@@ -15,7 +15,7 @@ const UpdateBook = () => {
         const rating = form.rating.value;
         const bookDetails = { image, bookName, authorName, category, rating };
         console.log(bookDetails);
-        fetch(`http://localhost:5000/allbooks/${loadedAllBooks._id}`, {
+        fetch(`https://ph-library-server.vercel.app/allbooks/${loadedAllBooks._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -18,7 +18,7 @@ const AddBook = () => {
         const description = form.description.value;
         const bookDetails = { bookName, authorName, category, amount, rating, image, description };
         console.log(bookDetails);
-        fetch('http://localhost:5000/allbooks', {
+        fetch('https://ph-library-server.vercel.app/allbooks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
