@@ -6,6 +6,7 @@ import { PiBooksDuotone } from "react-icons/pi";
 import StarRatings from "react-star-ratings";
 import { Link } from "react-router-dom";
 import { LuBookDown, LuBookUp } from "react-icons/lu";
+import { ToastContainer, toast } from "react-toastify";
 
 
 const BorrowedCard = ({ borrowcard, handleDeleteBook }) => {
@@ -49,11 +50,44 @@ const BorrowedCard = ({ borrowcard, handleDeleteBook }) => {
 
 
 
+    // const handleupdatedBook = evnt => {
+    //     evnt.preventDefault();
+
+    //     let amount = eventCard.amount + 1;
+    //     const image = eventCard.image;
+    //     const bookName = eventCard.bookName;
+    //     const authorName = eventCard.authorName;
+    //     const category = eventCard.category;
+    //     const rating = eventCard.rating;
+    //     const updatednewbooks = { image, bookName, authorName, category, rating, amount };
+
+
+    //     fetch(`http://localhost:5000/allbooks/${eventCard._id}`, {
+    //         method: 'PUT',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(updatednewbooks)
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             if (data.modifiedCount > 0) {
+    //                 toast('Done');
+    //             }
+    //         })
+    // }
+
+
+
+
+
 
 
     return (
         <div>
-            <h3>borrow book Id :{_id}</h3>
+            <h3>borrow :{_id}</h3>
+            <h3>card : {eventCard._id}</h3>
             <div className="rounded-lg bg-gradient-to-l from-violet-500 to-slate-400 grid grid-cols-4">
                 <div className="col-span-1">
                     <img src={eventCard.image} className="rounded-l-lg" alt="" />
@@ -69,7 +103,7 @@ const BorrowedCard = ({ borrowcard, handleDeleteBook }) => {
 
                         <div className="mt-1 flex justify-between">
                             {/* ///to={`/bookdetails/${_id}`} */}
-                            <button onClick={() => handleDeleteBook(_id)} className="border text-base  text-slate-100 border-violet-800 hover:bg-violet-800 px-3 py-1 rounded-lg">Return Button</button>
+                            <button onClick={() => handleDeleteBook(_id, eventCard._id)} className="border text-base  text-slate-100 border-violet-800 hover:bg-violet-800 px-3 py-1 rounded-lg">Return Button</button>
 
                         </div>
                     </div>
@@ -77,6 +111,7 @@ const BorrowedCard = ({ borrowcard, handleDeleteBook }) => {
                 </div>
 
             </div>
+            {/* <ToastContainer></ToastContainer> */}
 
 
         </div>

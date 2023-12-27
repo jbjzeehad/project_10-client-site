@@ -7,6 +7,7 @@ import WebsiteDetails from "../ExtraSection/WebsiteDetails";
 const Home = () => {
     return (
         <div>
+
             <Banner></Banner>
             <WebsiteDetails></WebsiteDetails>
             <Category></Category>

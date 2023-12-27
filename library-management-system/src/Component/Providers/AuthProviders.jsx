@@ -35,12 +35,12 @@ const AuthProviders = ({ children }) => {
 
         });
         return () => {
-            unSubscribe();
+            return unSubscribe();
         }
     }, [])
 
     const authinfo = {
-        user, createUser, logInUser, logInwithGoogle, logOutUser, loading
+        user, loading, createUser, logInUser, logInwithGoogle, logOutUser
     };
     return (
         <Authcontxt.Provider value={authinfo}>

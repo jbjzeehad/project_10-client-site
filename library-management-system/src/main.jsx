@@ -22,7 +22,7 @@ import Comic from './Component/Category/Comic';
 import History from './Component/Category/History';
 import SciTec from './Component/Category/SciTec';
 import BookDetails from './Component/BookDetails/BookDetails';
-import BorrowedCard from './Component/BorrowBook/BorrowedCard';
+
 
 const router = createBrowserRouter([
   {
