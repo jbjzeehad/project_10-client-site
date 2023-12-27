@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-
 import {
   createBrowserRouter,
   RouterProvider,
@@ -23,7 +22,6 @@ import History from './Component/Category/History';
 import SciTec from './Component/Category/SciTec';
 import BookDetails from './Component/BookDetails/BookDetails';
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,43 +39,42 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <PrivateRoutes><UpdateBook></UpdateBook></PrivateRoutes>,
-        loader: ({ params }) => fetch(`https://ph-library-server.vercel.app/allbooks/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/allbooks/${params.id}`)
       },
       {
         path: "/bookdetails/:id",
         element: <PrivateRoutes><BookDetails></BookDetails></PrivateRoutes>,
-        loader: () => fetch('https://ph-library-server.vercel.app/allbooks')
+        loader: () => fetch('http://localhost:5000/allbooks')
       },
       {
         path: "/borrow",
         element: <PrivateRoutes><BorrowBook></BorrowBook></PrivateRoutes>,
-        loader: () => fetch('https://ph-library-server.vercel.app/borrowedbooks')
+        loader: () => fetch('http://localhost:5000/borrowedbooks')
       },
-
       {
         path: "/all",
         element: <PrivateRoutes><AllBook></AllBook></PrivateRoutes>,
-        loader: () => fetch('https://ph-library-server.vercel.app/allbooks')
+        loader: () => fetch('http://localhost:5000/allbooks')
       },
       {
         path: "/horror",
         element: <PrivateRoutes><HorrorBook></HorrorBook></PrivateRoutes>,
-        loader: () => fetch('https://ph-library-server.vercel.app/allbooks')
+        loader: () => fetch('http://localhost:5000/allbooks')
       },
       {
         path: "/comic",
         element: <PrivateRoutes><Comic></Comic></PrivateRoutes>,
-        loader: () => fetch('https://ph-library-server.vercel.app/allbooks')
+        loader: () => fetch('http://localhost:5000/allbooks')
       },
       {
         path: "/history",
         element: <PrivateRoutes><History></History></PrivateRoutes>,
-        loader: () => fetch('https://ph-library-server.vercel.app/allbooks')
+        loader: () => fetch('http://localhost:5000/allbooks')
       },
       {
         path: "/scitec",
         element: <PrivateRoutes><SciTec></SciTec></PrivateRoutes>,
-        loader: () => fetch('https://ph-library-server.vercel.app/allbooks')
+        loader: () => fetch('http://localhost:5000/allbooks')
       },
       {
         path: "/login",
@@ -87,11 +84,9 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <SignUp></SignUp>,
       },
-
     ],
   },
 ]);
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProviders>

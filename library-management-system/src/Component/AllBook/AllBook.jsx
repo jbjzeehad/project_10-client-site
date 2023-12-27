@@ -5,6 +5,7 @@ import BookCard from "../BookCard/BookCard";
 
 const AllBook = () => {
     const loadedAllBooks = useLoaderData([]);
+    // console.log(loadedAllBooks);
     const [seeAllBooks, setAllBooks] = useState(loadedAllBooks);
     return (
         <div>

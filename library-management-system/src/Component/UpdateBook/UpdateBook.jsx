@@ -15,7 +15,7 @@ const UpdateBook = () => {
         const rating = form.rating.value;
         const bookDetails = { image, bookName, authorName, category, rating };
         console.log(bookDetails);
-        fetch(`https://ph-library-server.vercel.app/allbooks/${loadedAllBooks._id}`, {
+        fetch(`http://localhost:5000/allbooks/${loadedAllBooks._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -41,15 +41,12 @@ const UpdateBook = () => {
                     </div>
                     <div className="form-control  gap-3 m-3">
                         <span className="font-bold text-slate-900 text-xl">Author</span>
-
                         <input type="text" name='authorName' defaultValue={loadedAllBooks.authorName} placeholder="name" className=" text-white input " required />
                     </div>
                     <div className="form-control  gap-3 m-3">
-
                         <span className="font-bold text-slate-900 text-xl">Category</span>
                         <div className="join">
                             <select name="category" defaultValue={loadedAllBooks.category} className="w-full select select-bordered join-item">
-                                <option disabled selected>Category</option>
                                 <option value='Horror'>Horror</option>
                                 <option value='Comic'>Comic</option>
                                 <option value="History">History</option>
@@ -58,15 +55,12 @@ const UpdateBook = () => {
                             </select>
                         </div>
                     </div>
-
                 </div>
                 <div>
                     <div className="form-control  gap-3 m-3">
-
                         <span className="font-bold text-slate-900 text-xl">Rating</span>
                         <div className="join">
                             <select name="rating" defaultValue={loadedAllBooks.rating} required className="w-full select select-bordered join-item">
-                                <option disabled selected>Rating</option>
                                 <option value="5">5</option>
                                 <option value="4">4</option>
                                 <option value="3">3</option>
@@ -74,13 +68,11 @@ const UpdateBook = () => {
                                 <option value="1">1</option>
                             </select>
                         </div>
-
                     </div>
                     <div className="form-control  gap-3 m-3">
                         <span className="font-bold text-slate-900 text-xl">Image</span>
                         <input type="text" name='image' defaultValue={loadedAllBooks.image} placeholder="img url" className="input input-bordered" required />
                     </div>
-
                     <div className="form-control m-3">
                         <span className="mb-4 text-violet-600">Check again.</span>
                         <button className="btn hover:bg-violet-500 hover:text-white ">UPDATE BOOK</button>
@@ -91,5 +83,4 @@ const UpdateBook = () => {
         </div>
     );
 };
-
 export default UpdateBook;

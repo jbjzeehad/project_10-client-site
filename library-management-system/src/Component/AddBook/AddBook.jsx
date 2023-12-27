@@ -1,11 +1,7 @@
 
 import { ToastContainer, toast } from "react-toastify";
 
-
 const AddBook = () => {
-
-
-
     const handleAddBook = (evnt) => {
         evnt.preventDefault();
         const form = evnt.target;
@@ -18,7 +14,7 @@ const AddBook = () => {
         const description = form.description.value;
         const bookDetails = { bookName, authorName, category, amount, rating, image, description };
         console.log(bookDetails);
-        fetch('https://ph-library-server.vercel.app/allbooks', {
+        fetch('http://localhost:5000/allbooks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -27,7 +23,7 @@ const AddBook = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.insertedId) {
                     toast('Book Added');
                 }
@@ -52,7 +48,7 @@ const AddBook = () => {
                         <span className="font-bold text-slate-900 text-xl">Category</span>
                         <div className="join">
                             <select name="category" required className="w-full select select-bordered join-item">
-                                <option disabled selected>Category</option>
+                                <option disabled>Category</option>
                                 <option value="Horror">Horror</option>
                                 <option value="Comic" >Comic</option>
                                 <option value="History" >History</option>
@@ -75,7 +71,7 @@ const AddBook = () => {
 
                         <div className="join">
                             <select name="rating" required className="w-full select select-bordered join-item">
-                                <option disabled selected>Rating</option>
+                                <option disabled>Rating</option>
                                 <option value="5">5</option>
                                 <option value="4">4</option>
                                 <option value="3">3</option>
