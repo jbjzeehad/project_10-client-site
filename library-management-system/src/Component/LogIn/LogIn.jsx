@@ -34,7 +34,6 @@ const LogIn = () => {
                 setLoginError("Doesn't Match");
             })
     }
-
     const handleGoogleSignIn = event => {
         event.preventDefault();
         setSucess('');

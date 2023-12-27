@@ -72,7 +72,7 @@ const Navbar = () => {
                                 <img className="rounded-full w-7 h-7 " src={user.photoURL} />
                                 <span className="font-bold text-lg hover:text-violet-900 text-slate-900 py-1">{user.displayName}</span>
                             </div>
-                            <button onClick={handleLogOut} ><Link to='/' className="border-l p-2 hover:text-slate-100 text-slate-900 font-bold text-base">SIGN OUT</Link></button>
+                            <button onClick={handleLogOut} ><Link to='/' className="border-l p-2 hover:text-slate-100 text-slate-900 font-bold text-base">LOG OUT</Link></button>
                         </> : <>
                             <button><Link to='/login' className="border-l p-2 hover:text-slate-100 text-slate-900 font-bold text-base">LOG IN</Link></button>
                             <button><Link to='/signup' className="border-l p-2 hover:text-slate-100 text-slate-900 font-bold text-base">SIGN UP</Link></button>

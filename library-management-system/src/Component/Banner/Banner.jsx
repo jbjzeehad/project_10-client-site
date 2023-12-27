@@ -4,12 +4,13 @@ import 'swiper/css/pagination';
 import './styles.css';
 import { Pagination } from 'swiper/modules';
 import StarRatings from 'react-star-ratings';
+import { Link } from 'react-router-dom';
 
 
 const Banner = () => {
 
     const buttons = <>
-        <button className="border-violet-500 border-2 rounded-lg m-3 p-3 hover:border-slate-300 text-xl hover:text-violet-500 ">Read More</button>
+        <Link to='/all'><button className="border-violet-500 border-2 rounded-lg m-3 p-3 hover:border-slate-300 text-xl hover:text-violet-500 ">Read More</button></Link>
     </>
 
     return (

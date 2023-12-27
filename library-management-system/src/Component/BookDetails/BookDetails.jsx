@@ -7,9 +7,20 @@ import { LiaSwatchbookSolid } from "react-icons/lia";
 import { useContext, useState } from "react";
 import { Authcontxt } from "../Providers/AuthProviders";
 import { ToastContainer, toast } from "react-toastify";
+//////////////////////////////////////
+
+// import generatePDF from 'react-to-pdf';
+// import { useRef } from 'react';
+
+
+//////////////////////////////////////
 
 
 const BookDetails = () => {
+    ///////////////////////////////////////////////
+
+    // const targetRef = useRef();
+    //////////////////////////////////
     const { user } = useContext(Authcontxt);
     const bookDetails = useLoaderData();
     const { id } = useParams();
@@ -99,6 +110,23 @@ const BookDetails = () => {
                             <div className="modal-box bg-violet-500">
                                 <h3 className="font-bold flex items-center gap-2 m-3 text-2xl text-slate-50"><IoBookOutline></IoBookOutline> {details.bookName}</h3>
                                 <p className="py-4 pb-0 m-3 text-slate-950 font-medium text-lg">{details.description}</p>
+
+                                {/* ///////////////////////////////////////////////// */}
+
+                                {/* <div>
+                                    <button onClick={() => generatePDF(targetRef, { filename: 'Detailspage.pdf' })}>Download PDF</button>
+                                    <div ref={targetRef}>
+                                        <p title="PDF Format">{details.description}</p>
+                                    </div>
+                                </div> */}
+
+
+
+
+
+
+
+                                {/* ////////////////////////////////////////////////////// */}
                                 <div className="modal-action">
                                     <form method="dialog">
                                         {/* if there is a button in form, it will close the modal */}
@@ -130,7 +158,7 @@ const BookDetails = () => {
                                     </div>
                                     <div className="form-control  gap-3 m-3">
                                         <span className="font-bold text-slate-900 text-lg">Current Date</span>
-                                        <input type="date" name="currentdate" className="input def input-bordered" />
+                                        <input type="date" name="currentdate" className="input def input-bordered" required />
                                     </div>
                                     <div className="form-control  gap-3 m-3">
                                         <span className="font-bold text-slate-900 text-lg">Return Date</span>

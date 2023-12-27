@@ -13,10 +13,7 @@ const BorrowedCard = ({ borrowcard, handleDeleteBook }) => {
 
     ////////////////////////////////////////
     const [eventCard, setEventCard] = useState([]);
-
-
     ///////////////////////////////
-
     const { _id, bookId, currentdate, returndate } = borrowcard;
 
     // fetch(`http://localhost:5000/allbooks/${bookId}`)
@@ -32,7 +29,6 @@ const BorrowedCard = ({ borrowcard, handleDeleteBook }) => {
 
     }, [])
 
-
     // const handleDeleteBook = id => {
     //     fetch(`http://localhost:5000/borrowedbooks/${id}`, {
     //         method: 'DELETE'
@@ -46,10 +42,6 @@ const BorrowedCard = ({ borrowcard, handleDeleteBook }) => {
     //         })
     // }
 
-
-
-
-
     // const handleupdatedBook = evnt => {
     //     evnt.preventDefault();
 
@@ -60,7 +52,6 @@ const BorrowedCard = ({ borrowcard, handleDeleteBook }) => {
     //     const category = eventCard.category;
     //     const rating = eventCard.rating;
     //     const updatednewbooks = { image, bookName, authorName, category, rating, amount };
-
 
     //     fetch(`http://localhost:5000/allbooks/${eventCard._id}`, {
     //         method: 'PUT',
@@ -78,16 +69,8 @@ const BorrowedCard = ({ borrowcard, handleDeleteBook }) => {
     //         })
     // }
 
-
-
-
-
-
-
     return (
         <div>
-            <h3>borrow :{_id}</h3>
-            <h3>card : {eventCard._id}</h3>
             <div className="rounded-lg bg-gradient-to-l from-violet-500 to-slate-400 grid grid-cols-4">
                 <div className="col-span-1">
                     <img src={eventCard.image} className="rounded-l-lg" alt="" />
@@ -112,8 +95,6 @@ const BorrowedCard = ({ borrowcard, handleDeleteBook }) => {
 
             </div>
             {/* <ToastContainer></ToastContainer> */}
-
-
         </div>
     );
 };
