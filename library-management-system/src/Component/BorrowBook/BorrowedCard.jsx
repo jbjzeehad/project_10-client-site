@@ -10,7 +10,7 @@ const BorrowedCard = ({ borrowcard, handleDeleteBook }) => {
     const { _id, bookId, currentdate, returndate } = borrowcard;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allbooks/${bookId}`)
+        fetch(`https://ph-library-server.vercel.app/allbooks/${bookId}`)
             .then(res => res.json())
             .then(data => setEventCard(data))
 

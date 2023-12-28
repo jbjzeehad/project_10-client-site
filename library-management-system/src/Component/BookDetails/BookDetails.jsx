@@ -23,7 +23,7 @@ const BookDetails = () => {
         const borrowed = { email, returndate, currentdate, bookId };
         let amount = parseInt(details.amount);
         if (amount > 0) {
-            fetch('http://localhost:5000/borrowedbooks', {
+            fetch('https://ph-library-server.vercel.app/borrowedbooks', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -41,7 +41,7 @@ const BookDetails = () => {
             const category = details.category;
             const rating = details.rating;
             const updatedbooks = { image, bookName, authorName, category, rating, amount };
-            fetch(`http://localhost:5000/allbooks/${details._id}`, {
+            fetch(`https://ph-library-server.vercel.app/allbooks/${details._id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
