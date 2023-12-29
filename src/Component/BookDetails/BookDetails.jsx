@@ -61,7 +61,7 @@ const BookDetails = () => {
         }
     }
     return (
-        <div className="bg-gradient-to-r from-violet-500 to-slate-300">
+        <div className="">
             <div className="grid grid-cols-6  p-3">
                 <div className="col-span-1">
                     <img className="rounded-l-lg" src={details.image} />
@@ -78,10 +78,10 @@ const BookDetails = () => {
                         </div>
                     </div>
                     <div className=" m-3">
-                        <p className="flex items-center gap-2 text-xl font-semibold text-slate-900"><FiUser></FiUser> Author : {details.authorName}</p>
-                        <p className="flex items-center gap-2 text-xl font-semibold text-slate-900"><PiBooksDuotone></PiBooksDuotone> Category : {details.category}</p>
-                        <p className="flex items-center gap-2 text-xl font-semibold text-slate-900"><LiaSwatchbookSolid></LiaSwatchbookSolid> Available Books : 0{details.amount}</p>
-                        <p className="flex items-center gap-2 text-xl font-semibold text-slate-900"><IoBookOutline></IoBookOutline> Read some content of the book.</p>
+                        <p className="flex items-center gap-2 text-xl font-semibold text-slate-100"><FiUser></FiUser> Author : {details.authorName}</p>
+                        <p className="flex items-center gap-2 text-xl font-semibold text-slate-100"><PiBooksDuotone></PiBooksDuotone> Category : {details.category}</p>
+                        <p className="flex items-center gap-2 text-xl font-semibold text-slate-100"><LiaSwatchbookSolid></LiaSwatchbookSolid> Available Books : 0{details.amount}</p>
+                        <p className="flex items-center gap-2 text-xl font-semibold text-slate-100"><IoBookOutline></IoBookOutline> Read some content of the book.</p>
                         <dialog id="my_modal_1" className="modal">
                             <div className="modal-box bg-violet-500">
                                 <h3 className="font-bold flex items-center gap-2 m-3 text-2xl text-slate-50"><IoBookOutline></IoBookOutline> {details.bookName}</h3>

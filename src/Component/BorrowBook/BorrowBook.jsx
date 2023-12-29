@@ -49,13 +49,8 @@ const BorrowBook = () => {
         // console.log(bid);
 
     }
-
-
-
-
-
     return (
-        <div className="bg-gradient-to-r from-violet-300 to-slate-300 ">
+        <div className=" ">
             {/* <h3>BORROW BOOK: {loadedBorrowedBooks.length} </h3> */}
             <div className="grid grid-cols-3 gap-3 p-5">
                 {
